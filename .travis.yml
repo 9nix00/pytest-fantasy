@@ -1,0 +1,18 @@
+language: python
+env:
+  - PYTHONPATH=./ FANTASY_ACTIVE_DB=no FANTASY_ACTIVE_CACHE=no
+python:
+  - "3.4"
+  - "3.5"
+  - "3.5-dev"
+  - "3.6"
+  - "3.6-dev"
+  - "pypy3"
+install:
+  - "pip install -r requirements.txt"
+  - "pip install -r requirements.test.txt"
+script:
+  - "flake8"
+  - "pytest"
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
