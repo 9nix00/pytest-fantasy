@@ -6,6 +6,11 @@ Pytest-Fantasy
 
 Pytest plugin for Flask Fantasy Framework.
 
+.. note::
+
+    THIS PROJECT IS ON DEVELOPMENT. DON'T USE IT.
+
+
 
 
 .. |build-status| image:: https://secure.travis-ci.org/wangwenpei/pytest-fantasy.png?branch=master
