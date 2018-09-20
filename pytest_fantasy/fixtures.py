@@ -7,6 +7,7 @@
 import os
 
 import pytest
+from click.testing import CliRunner
 
 
 def pytest_namespace():
@@ -106,3 +107,8 @@ def fantasy_celery_app(client):
     celery_app = app.celery
     celery_app.conf.update(CELERY_ALWAYS_EAGER=True)
     return celery_app
+
+
+@pytest.fixture
+def fantasy_cli():
+    return CliRunner()
