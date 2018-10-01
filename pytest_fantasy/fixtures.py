@@ -10,6 +10,11 @@ import pytest
 from click.testing import CliRunner
 
 
+os.environ.setdefault('SKIP_UNIT_TEST', 'no')
+skip_ci = pytest.mark.skipif(os.environ['SKIP_UNIT_TEST'] == 'yes',
+                             reason='skip CI/CD system.')
+
+
 def pytest_namespace():
     return {
         'resource_root': None,
